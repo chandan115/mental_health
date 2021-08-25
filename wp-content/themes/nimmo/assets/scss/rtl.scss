@@ -1,0 +1,339 @@
+/*
+Theme Name: Fincore
+Adding support for languages written in a Right To Left (RTL) direction is easy -
+it's just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+https://codex.wordpress.org/Right-to-Left_Language_Support
+*/
+
+body.rtl {
+    direction: rtl;
+    unicode-bidi: embed;
+    text-align: right;
+    .vc_col-lg-1, .vc_col-lg-10, .vc_col-lg-11, .vc_col-lg-12, .vc_col-lg-2, .vc_col-lg-3, .vc_col-lg-4, .vc_col-lg-5, .vc_col-lg-6, .vc_col-lg-7, .vc_col-lg-8, .vc_col-lg-9, .vc_col-md-1, .vc_col-md-10, .vc_col-md-11, .vc_col-md-12, .vc_col-md-2, .vc_col-md-3, .vc_col-md-4, .vc_col-md-5, .vc_col-md-6, .vc_col-md-7, .vc_col-md-8, .vc_col-md-9, .vc_col-sm-1, .vc_col-sm-10, .vc_col-sm-11, .vc_col-sm-12, .vc_col-sm-2, .vc_col-sm-3, .vc_col-sm-4, .vc_col-sm-5, .vc_col-sm-6, .vc_col-sm-7, .vc_col-sm-8, .vc_col-sm-9, .vc_col-xs-1, .vc_col-xs-10, .vc_col-xs-11, .vc_col-xs-12, .vc_col-xs-2, .vc_col-xs-3, .vc_col-xs-4, .vc_col-xs-5, .vc_col-xs-6, .vc_col-xs-7, .vc_col-xs-8, .vc_col-xs-9 {
+		float: right;
+	}
+	.text-left, .align-left {
+		text-align: right;
+	}
+	.owl-dots {
+		.owl-dot {
+			margin: 0 8px;
+		}
+	}
+	.owl-nav {
+		direction: ltr;
+	}
+	input[type="text"],
+	input[type="email"],
+	input[type="url"],
+	input[type="password"],
+	input[type="search"],
+	input[type="tel"],
+	input[type="number"],
+	input[type="range"],
+	input[type="date"],
+	input[type="month"],
+	input[type="week"],
+	input[type="time"],
+	input[type="datetime"],
+	input[type="datetime-local"],
+	input[type="color"],
+	textarea, select, .nice-select {
+		text-align: right;
+	}
+	.nice-select:after {
+		right: auto;
+		left: 18px;
+	}
+	.nice-select {
+		padding-left: 40px;
+		padding-right: 18px;
+	}
+	.nice-select .option {
+		text-align: right;
+	}
+	#pagetitle h1.page-title {
+		margin-right: 0;
+		margin-left: 30px;
+	}
+	.wpcf7-form .input-filled > i {
+		right: auto;
+		left: 38px;
+	}
+	.wpcf7-form .input-filled > i + .wpcf7-form-control-wrap .wpcf7-form-control:not(.wpcf7-submit) {
+		padding-right: 40px;
+		padding-left: 70px;
+	}
+	#pagetitle .page-title-search .search-field {
+		padding-right: 30px;
+		padding-left: 86px;
+	}
+	#pagetitle .page-title-search .search-submit {
+		right: auto;
+		left: 0;
+	}
+}
+.rtl {
+	@media #{$min-xl} {
+		.content-row #primary.content-has-sidebar.float-left + .widget-has-sidebar {
+			border-left: none;
+		    border-right: 1px solid #e5e5e5;
+		}
+	}
+	@media #{$min-lg} { 
+	    .text-left-lg {
+	        text-align: right !important;
+	    }   
+	    .text-right-lg {
+	        text-align: left !important;
+	    }   
+	}
+	@media #{$max-lg} {
+	    .align-left-md {
+	        text-align: right;
+	    }
+	    .align-right-md {
+	        text-align: left;
+	    }
+	}
+	@media #{$max-md} {
+	    .text-left-md {
+	        text-align: right !important;
+	    }
+	    .text-right-md {
+	        text-align: left !important;
+	    }
+	    .align-left-sm {
+	        text-align: right;
+	    }
+	    .align-right-sm {
+	        text-align: left;
+	    }
+	}
+	@media #{$max-sm} {
+	    .text-left-sm {
+	        text-align: right !important;
+	    }
+	    .text-right-sm {
+	        text-align: left !important;
+	    }
+	    .align-left-xs {
+	        text-align: right;
+	    }
+	    .align-right-xs {
+	        text-align: left;
+	    }
+	}
+
+	/* Header */
+	@media screen and (min-width: 992px) {
+		#header-wrap .btn-header {
+			margin-left: 0;
+			margin-right: 30px;
+		}
+		#header-wrap.header-layout2 #header-main .header-branding a {
+			left: 0;
+		}
+		.primary-menu .sub-menu li a {
+			&:before {
+				left: auto;
+				right: 0;
+			}
+			&:hover {
+				padding-left: 0;
+				padding-right: 20px;
+			}
+		}
+		#header-wrap {
+			.primary-menu {
+				> li {
+					float: right;
+					margin-left: 40px;
+					&.menu-item-has-children > a::after {
+						margin-left: 0;
+						margin-right: 5px;
+					}
+				}
+				.sub-menu {
+					left: auto;
+					right: 0;
+				}
+			}
+		    .header-menu-right {
+		    	margin-left: 0;
+		    	margin-right: 22px;
+		    }
+	    }
+	}
+	@media screen and (max-width: 991px) {
+		#header-wrap {
+	    	.site-branding {
+		        text-align: right;
+		        .logo-dark {
+		        	left: auto;
+					right: 0;
+		        }
+		    }
+		    .primary-menu li {
+		    	text-align: right;
+		    }
+		    .primary-menu .sub-menu {
+		    	left: auto;
+		    	right: 0;
+		    }
+		    .menu-mobile-close {
+		    	right: auto;
+		    	left: 0;
+		    }
+		    #main-menu-mobile {
+		    	right: auto;
+		    	left: 15px;
+		    }
+		    .main-menu-toggle {
+		    	right: auto;
+		    	left: 12px;
+		    }
+		    .header-navigation {
+		    	right: 0;
+		    	.main-navigation {
+		    		@include transform(translateX(100%));
+		    		left: auto;
+		    	}
+		    	&.navigation-open .main-navigation {
+		    		@include transform(translateX(0%));
+		    	}
+		    }
+		    .header-mobile-search .search-submit {
+		    	right: auto;
+		    	left: 0px;
+		    }
+	    }
+	}
+	#header-wrap .header-branding .logo-sticky, #header-wrap .header-branding .logo-mobile, #header-wrap .header-branding .logo-dark {
+		left: auto;
+		right: 0;
+	}
+	
+	/* Shortcode */
+	.ct-heading .ct-typingout-typed .ct-typingout-animation:after {
+		display: none;
+	}
+	.ct-process-layout1::before {
+		@include transform(scaleX(-1));
+	}
+	.ct-process-layout1 .ct-process-button a i {
+		margin-left: 0;
+		margin-right: 4px;
+		&:before {
+			content: '\f104';
+		}
+	}
+	.ct-counter-default .ct-counter-icon + .ct-counter-holder {
+		padding-left: 0;
+		padding-right: 40px;
+	}
+	.vc_tta-container .vc_tta-tabs.vc_tta-style-default .vc_tta-tabs-container .vc_tta-tabs-list li:first-child a {
+		@include border-radius(0 52px 52px 0);
+	}
+	.vc_tta-container .vc_tta-tabs.vc_tta-style-default .vc_tta-tabs-container .vc_tta-tabs-list li:last-child a {
+		@include border-radius(52px 0 0 52px);
+	}
+	.ct-progress-layout1 {
+		.ct-progress-title {
+			margin-right: 0;
+			margin-left: 20px;
+		}
+		.ct-progress.progress {
+			margin-right: 0;
+			margin-left: 68px;
+			.progress-bar span {
+				margin-left: 0;
+				margin-right: 20px;
+				right: auto;
+				left: -68px;
+			}
+		}
+	}
+	/* Blog */
+	.entry-meta::before, .item-meta::before {
+		left: auto;
+		right: 0;
+	}
+	.entry-meta li, .item-meta li {
+		padding-right: 0;
+		padding-left: 24px;
+		i {
+			margin-right: 0;
+			margin-left: 6px;
+		}
+	}
+	.widget_search .search-form .search-submit {
+		right: auto;
+		left: 0;
+		border-left: none;
+		border-right: 1px solid #ececf0;
+	}
+	.widget-title::before, .comments-title::before, .comment-reply-title::before {
+		left: auto;
+		right: 0;
+	}
+	.widget_ct_recent_posts .entry-media {
+		margin-right: 0;
+		margin-left: 25px;
+	}
+	&.single-post .content-area .entry-content-bottom .entry-tags {
+		margin-right: 0;
+		margin-left: 30px;
+	}
+	&.single-post .content-area .entry-content-bottom .entry-social a {
+		margin-right: 0;
+		margin-left: 5px;
+	}
+	.comment-inner img.avatar {
+		margin-right: 0;
+		margin-left: 30px;
+		@media #{$max-sm} {
+			margin-left: 0;
+		}
+	}
+	.comment-reply {
+		right: auto;
+		left: 23px;
+	}
+	/* Footer */
+	.site-footer .bottom-footer .bottom-social a {
+		margin-left: 0;
+		margin-right: 9px;
+	}
+	.contact-info ul li {
+		padding-left: 0;
+		padding-right: 27px;
+		i {
+			left: auto;
+			right: 0;
+		}
+	}
+	@media #{$min-xl} {
+		.site-footer .top-footer .ct-footer-item.col-xl-3:nth-child(1) {
+			padding-right: 0px;
+			padding-left: 60px;
+		}
+	}
+	.site-footer .top-footer ul.menu li > a {
+		padding-left: 0;
+		padding-right: 14px;
+		&:before {
+			left: auto;
+			right: 0;
+			content: '\f104';
+		}
+	}
+	.site-footer .top-footer ul.menu li > a:hover, .site-footer .top-footer ul.menu li.current_page_item > a, .site-footer .top-footer ul.menu li.current-menu-item > a, .site-footer .top-footer ul.menu li.current_page_ancestor > a, .site-footer .top-footer ul.menu li.current-menu-ancestor > a {
+		padding-left: 0;
+		padding-right: 21px;
+		&:before {
+			right: 8px;
+		}
+	}
+}

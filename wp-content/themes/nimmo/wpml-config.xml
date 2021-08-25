@@ -1,0 +1,9 @@
+<wpml-config>
+    <admin-texts>
+        <key name="cms_theme_options">
+            <key name="social_label" />
+            <key name="h_btn_text" />
+            <key name="footer_copyright" />
+        </key>
+    </admin-texts>
+</wpml-config>

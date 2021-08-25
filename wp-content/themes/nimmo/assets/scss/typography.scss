@@ -1,0 +1,308 @@
+html {
+    box-sizing: border-box;
+}
+a {
+  @include transition(all 300ms linear 0ms);
+  color: #3396EC;
+}
+a, a:hover, a:focus, a:before, a:after {
+  outline: none;
+  text-decoration: none;
+}
+a:hover, a:focus {
+  color: $link_color_active;
+}
+
+p {
+  margin-bottom: 15px;
+}
+body {
+  background-color: #fff;
+  font-size: 16px;
+  line-height: 1.8125;
+  color: #333333;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  font-weight: normal;
+  letter-spacing: 0;
+  &.body-default-font {
+    @include font-family-default($body_default_font);
+  }
+  &.ovhidden {
+    overflow: hidden;
+  }
+}
+
+// Headings
+//--------------------------------------------------
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: normal;
+  color: #252a37;
+  clear: both;
+  line-height: 1.25;
+  margin: 0 0 15px;
+  font-weight: 600;
+}
+.heading-default-font {
+  h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6 {
+    @include font-family-heading($heading_default_font);
+  }
+}
+.ft-heading {
+  @include font-family-heading($heading_default_font);
+}
+h1, .h1 {
+  font-size: 48px;
+}
+
+h2, .h2 {
+  font-size: 36px;
+}
+
+h3, .h3 {
+  font-size: 24px;
+}
+
+h4, .h4 {
+  font-size: 22px;
+}
+
+h5, .h5 {
+  font-size: 18px;
+}
+
+h6, .h6 {
+  font-size: 16px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+label {
+  margin-bottom: 0;
+}
+
+// Unit Test
+//--------------------------------------------------
+
+table {
+    border-bottom: 1px solid #ededed;
+    border-collapse: collapse;
+    border-spacing: 0;
+    line-height: 2;
+    margin: 0 0 20px;
+    width: 100%;
+    @include border-radius(0);
+    th {
+      color: $color_dark;
+    }
+}
+caption, td {
+    font-weight: normal;
+    text-align: left;
+}
+.table > tbody > tr > td, 
+.table > tbody > tr > th, 
+.table > tfoot > tr > td, 
+.table > tfoot > tr > th, 
+.table > thead > tr > td, 
+.table > thead > tr > th {
+  padding: 13px 8px;
+}
+th {
+  font-weight: 700;
+}
+td {
+    border-top: 1px solid #ededed;
+    padding: 6px 10px 6px 0;
+}
+/*--- Definition Lists ---*/
+dl {
+    margin: 0 0 0 25px;
+}
+dl dt {
+    font-weight: normal;
+    line-height: 26px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #000;
+}
+dl dd {
+    line-height: normal;
+    margin-bottom: 20px;
+    a {
+      color: #000;
+      &:hover {
+        color: $primary_color;
+      }
+    }
+}
+code, kbd {
+    background-color: transparent;
+    border-radius: 4px;
+    color: inherit;
+    font-size: 100%;
+    padding: 2px 4px;
+    -webkit-box-shadow: none;
+       -moz-box-shadow: none;
+         -o-box-shadow: none;
+            box-shadow: none;
+}
+ins {
+    color: #fff;
+    border: none;
+    padding: 2px;
+    text-decoration: none;
+    background-color: $primary_color;
+}
+pre {
+    background: #f5f5f5;
+    color: #666;
+    font-size: 14px;
+    margin: 20px 0;
+    overflow: auto;
+    padding: 20px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+ol {
+  list-style: outside none decimal;
+}
+ul {
+  padding: 0;
+  margin: 0 0 15px;
+  li {
+    list-style-position: inside;
+  }
+}
+blockquote {
+  background-color: #f4f7fc;
+  font-size: 20px;
+  color: #333333;
+  line-height: 1.7;
+  position: relative;
+  padding: 50px 30px 30px 115px;
+  @include font-family-heading($heading_default_font);
+  clear: both;
+  margin: 40px 0;
+  overflow: hidden;
+  p {
+    margin-bottom: 0 !important;
+  }
+  cite {
+    font-style: normal;
+    display: block;
+    color: $secondary_color;
+    font-weight: 700;
+    font-size: 16px;
+    margin-top: 11px;
+  }
+  &:before {
+    content: '\f10d';
+    font-family: "FontAwesome";
+    color: $primary_color;
+    font-size: 28px;
+    position: absolute;
+    left: 22px;
+    top: 10px;
+    font-style: normal;
+    @include background-horizontal($primary_color, $secondary_color);
+    background-color: transparent;
+    background-clip: text;
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+    text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
+    z-index: 2;
+  }
+  &:after {
+    content: '';
+    z-index: 1;
+    height: 110px;
+    width: 110px;
+    background-color: #fff;
+    text-align: center;
+    position: absolute;
+    top: -24px;
+    left: -24px;
+    @include border-radius(110px);
+  }
+  @media #{$max-sm} {
+    padding-left: 20px;
+    padding-top: 110px;
+    font-size: 16px;
+    padding-right: 20px;
+  }
+}
+.dlab-divider {
+  height: 1px;
+  width: 100%;
+  margin: 30px 0;
+  background-color: #d3d3d3;
+}
+
+dl + h2 + ul {
+  padding-left: 35px;
+  ul {
+    padding-left: 35px;
+    li {
+      list-style: outside;
+    }
+  }
+}
+.post-password-form {
+  label {
+    display: block;
+    max-width: 60%;
+  }
+  input {
+    margin: 10px 0;
+  }
+}
+@media #{$max-sm} {
+  .post-password-form label {
+    max-width: 60%;
+  }
+}
+@font-face {
+  font-family: 'Droidsans';
+  src: url('../fonts/droidsans-webfont.woff2') format('woff2'),
+       url('../fonts/droidsans-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+.ft-droidsans {
+  font-family: 'Droidsans';
+}
+#tslOverlay {
+  background: none !important;
+}
+.wp-block-button {
+  margin-bottom: 20px;
+}
+.wp-block-gallery {
+  .blocks-gallery-item {
+    float: left;
+  }
+  .blocks-gallery-caption {
+    margin-bottom: 32px;
+  }
+}
+.entry-body .entry-content .wp-block-cover {
+  margin-bottom: 45px;
+}
+.entry-body .entry-content .wp-block-cover-text {
+  color: rgba(255,255,255,0.87);
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 24px;
+  line-height: 1.25;
+}

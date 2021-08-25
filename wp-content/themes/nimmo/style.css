@@ -1,0 +1,52 @@
+/*
+Theme Name: Nimmo
+Theme URI: http://demo.casethemes.net/nimmo/
+Author: CaseThemes
+Author URI: https://themeforest.net/user/case-themes/portfolio
+Description: Nimmo WordPress Theme is a creative & unique design based on latest technology. All files are clearly organised we believe it will be easy to use and edit them. This theme is well organized and very easy to customize. Its easy to use and navigate as well. Compatible with Desktop,Laptop,table,mobile or any device. Nimmo is minimal and clean design, will give your business a professional looks. Suitable for anyone who is looking for app, app landing, app landing page, app landing template, App Showcase, app website, creative agency landing page, landing page, business landing page & modern looking. 
+Version: 1.2.2
+License: ThemeForest
+License URI: https://themeforest.net/licenses
+Text Domain: nimmo
+Tags: agency, bootstrap, business, clean, colorful, corporate, creative, flat, gradient, multipurpose, one page, parallax, portfolio, responsive, slider  
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+.sub_title_warning .ct-heading-desc {
+    margin: 0px 0px 0px 54px;
+}
+.typess .ct-heading-desc {
+    margin: 0 0 0 55px;
+}
+.preve h4.service-title {
+    font-size: 18px;
+}
+.preve .grid-item-inner {
+    max-height: 370px;
+}
+#prevention .grid-item-inner {
+    height: 400px;
+}
+#appointments h6 {
+    color: #fff;
+}
+#appointments {
+    color: #fff;
+}
+#appointments .vc_tta-panels-container {
+    border: 1px solid #fff;
+    height: 500px;
+}
+#appointments .vc_tta-tabs-container {
+    border: 1px solid #fff;
+}
+#appointments li.vc_tta-tab {
+    border: 1px solid #fff;
+}
+span.link-icon.left-icon {
+    padding: 0px 10px 0 0;
+}
+.logo-dark img {
+    height: 101px;
+    margin: -12px 0 0 0;
+}

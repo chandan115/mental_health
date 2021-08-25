@@ -1,0 +1,59 @@
+// Page Title
+//--------------------------------------------------
+#pagetitle {
+  padding: 200px 0 93px;
+  background-color: $primary_color;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  text-align: center;
+  @media #{$max-lg} {
+    background-attachment: inherit;
+  }
+  @media #{$max-md} {
+    padding: 60px 0;
+  }
+  &:before {
+    background-color: rgba(#000, 0.7);
+  }
+  .container {
+    position: relative;
+    z-index: 99;
+  }
+  h1.page-title {
+  	font-size: 36px;
+    color: #fff;
+    margin-bottom: 12px;
+    @media #{$max-sm} {
+      font-size: 28px;
+    }
+    @media #{$max-xs} {
+      font-size: 24px;
+    }
+  }
+  .ct-breadcrumb {
+    margin: 0;
+    list-style: none;
+    li {
+      font-size: 18px;
+      color: #fff;
+      display: inline-block;
+      margin-right: 10px;
+      @include font-family-heading($heading_default_font);
+      @media #{$max-sm} {
+        font-size: 16px;
+      }
+      &:after {
+        content: "/";
+        margin-left: 11px;
+      }
+      a {
+        color: #fff;
+      }
+      &:last-child:after {
+        display: none;
+      }
+    }
+  }
+}

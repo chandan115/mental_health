@@ -1,0 +1,333 @@
+/* CMS Button */
+.btn,
+button,
+.button,
+input[type="submit"] {
+  @include background-horizontal($primary_color, $secondary_color);
+  border: none;
+  color: #fff;
+  font-size: 15px;
+  padding: 0 32px;
+  line-height: 50px;
+  @include transition(all 300ms linear 0ms);
+  @include border-radius(50px);
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  font-weight: 500;
+  outline: none;
+  white-space: nowrap;
+  @include box-shadow(0 2px 10px rgba(#000, 0.36));
+  text-transform: uppercase;
+  &:hover, &:focus, &:active {
+    outline: none;
+    text-decoration: none;
+    color: #fff;
+    background-color: #000;
+    background-image: none;
+  }
+  
+}
+.btn {
+  i {
+    @include transition(all 300ms linear 0ms);
+  }
+  &:before, &:after {
+    background-color: #fff;
+    content: "";
+    height: 100%;
+    left: -110%;
+    opacity: 0.1;
+    position: absolute;
+    top: 0;
+    @include transition(all 0.5s ease 0s);
+    @include transform(skewX(25deg));
+    width: 100%;
+    z-index: -1;
+  }
+  &:hover, &:focus, &:active {
+    @include background-horizontal($primary_color, $secondary_color);
+    &:before {
+      left: -10%;
+      @include transition(all 0.3s ease 0s);
+    }
+    &:after {
+      left: -20%;
+    }
+  }
+  &.size-lg {
+    line-height: 58px;
+    padding: 0 44px;
+
+  }
+  &.btn-primary {
+    background-color: $primary_color;
+    background-image: none;
+  }
+  &.btn-secondary {
+    background-color: $secondary_color;
+    background-image: none;
+  }
+  &.btn-third {
+    background-color: $third_color;
+    background-image: none;
+  }
+  &.no-shadow {
+    @include box-shadow(none);
+  }
+  &.btn-outline {
+    color: #2d3136;
+    background-color: transparent;
+    background-image: none;
+    i {
+      color: $primary_color;
+    }
+    span {
+      &:before {
+        content: '';
+        @include background-horizontal($primary_color, $secondary_color);
+        z-index: -2;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        @include border-radius(50px);
+      }
+      &:after {
+        content: '';
+        background-color: #fff;
+        z-index: -1;
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        right: 2px;
+        bottom: 2px;
+        @include border-radius(50px);
+        @include transition(all 300ms linear 0ms);
+      }
+    }
+    &:hover {
+      color: #fff;
+      i {
+        color: #fff;
+      }
+      span:after {
+        background-color: transparent;
+      }
+    }
+  }
+  &.btn-shadow {
+    @include box-shadow(0px 2px 10px rgba(34, 34, 34, 0.36));
+  }
+  &.btn-gradient1, &.btn-gray1 {
+    @include box-shadow(none);
+    background-image: none;
+    background-color: transparent;
+    @include border-radius(0px);
+    overflow: visible;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 0 34px;
+    line-height: 60px;
+    text-transform: capitalize;
+    @include font-family-heading($heading_default_font);
+    &:before {
+      left: 0;
+      @include background-gradient-button(90deg, $gradient_color_from 0%, $gradient_color_to 50%, $gradient_color_from);
+      background-size: 300%,1px;
+      background-position: 0%;
+      opacity: 1;
+      @include transform(skewX(-13deg));
+      @include box-shadow(0 7px 18px rgba($gradient_color_to, 0.19));
+    }
+    &:after {
+      display: none;
+    }
+    &:hover {
+      &:before {
+        background-position: 100% !important;
+      }
+    }
+    &.btn-gradient-preset1 {
+      &:before {
+        @include background-gradient-button(90deg, $gradient_color_from2 0%, $gradient_color_to2 50%, $gradient_color_from2);
+        @include box-shadow(0 7px 18px rgba($gradient_color_to2, 0.19));
+      }
+    }
+  }
+  &.btn-gradient2 {
+    line-height: 65px;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 0 40px;
+    @include border-radius(5px);
+    text-transform: capitalize;
+    @include font-family-heading($heading_default_font);
+    @include box-shadow(none !important);
+    @include background-gradient-button(90deg, $gradient_color_to2 0%, $gradient_color_from2 50%, $gradient_color_to2);
+    background-size: 300%, 1px;
+    background-position: 0%;
+    &:before, &:after {
+      display: none;
+    }
+    &:hover, &:focus {
+      background-position: 100%;
+    }
+  }
+  &.btn-gradient-2 {
+    line-height: 68px;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 0 50px;
+    @include border-radius(0px);
+    text-transform: capitalize;
+    @include font-family-heading($heading_default_font);
+    @include box-shadow(0 7px 18px rgba($gradient_color_to, 0.39) !important);
+    @include background-gradient-button(90deg, $gradient_color_from 0%, $gradient_color_to 50%, $gradient_color_from);
+    background-size: 300%, 1px;
+    background-position: 0%;
+    &:before, &:after {
+      display: none;
+    }
+    &:hover, &:focus {
+      background-position: 100%;
+    }
+  }
+  &.btn-gray1 {
+    color: #162171;
+    &:before {
+      background-color: #e6e6e6;
+      background-image: none;
+      @include box-shadow(none);
+    }
+    &:hover {
+      color: #fff;
+      &:before {
+        background-color: $gradient_color_from;
+      }
+    }
+  }
+  &.btn-gray2 {
+    line-height: 68px;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 0 34px;
+    @include border-radius(0px);
+    text-transform: capitalize;
+    @include font-family-heading($heading_default_font);
+    @include box-shadow(none !important);
+    color: #162171;
+    background-color: #e6e6e6;
+    background-image: none;
+    &:before, &:after {
+      display: none;
+    }
+    &:hover, &:focus {
+      background-color: $primary_color !important;
+      color: #fff;
+    }
+  }
+  &.btn-gray3 {
+    line-height: 58px;
+    padding: 0 50px;
+    @include border-radius(7px);
+    background-image: none;
+    background-color: #808080;
+    color: #fff;
+    font-size: 16px;
+    text-transform: capitalize;
+    &:before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      width: calc(100% + 4px);
+      width: -webkit-calc(100% + 4px);
+      height: calc(100% + 4px);
+      height: -webkit-calc(100% + 4px);
+      background-color: #333;
+      transform-origin: right center;
+      -webkit-transform-origin: right center;
+      @include transform(scale(0, 1));
+      @include transition(transform 0.25s cubic-bezier(0.37, 0.31, 0.2, 0.85));
+      z-index: -1;
+      opacity: 1;
+    }
+    &:after {
+      display: none;
+    }
+    &:hover {
+      &:before {
+        transform-origin: left center;
+        -webkit-transform-origin: left center;
+        @include transform(scale(1, 1));
+      }
+    }
+  }
+}
+.btn-align-center {
+  text-align: center;
+}
+.btn-align-right {
+  text-align: right;
+}
+.btn-group .btn + .btn {
+  margin-left: 30px;
+}
+.btn-block {
+  display: block;
+}
+.ct-button-wrapper {
+  i {
+    margin-left: 10px;
+  }
+  &.el-inline {
+    margin-right: 16px;
+    margin-bottom: 30px;
+  }
+}
+.ct-btn-group {
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+.ct-button-wrapper.layout-custom {
+  .btn {
+    color: #FAFFF8;
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    width: inherit;
+    min-height: 58px;
+    span {
+      text-transform: uppercase;
+      display: block;
+      line-height: 1;
+      text-align: left;
+    }
+    cite {
+      text-transform: none;
+      display: block;
+      line-height: 1;
+      font-size: 12px;
+      font-style: normal;
+      margin-bottom: 8px;
+    }
+    i {
+      font-size: 32px;
+      margin-left: 0;
+      margin-right: 14px;
+    }
+    &.btn-outline {
+      color: #2d3136;
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}
